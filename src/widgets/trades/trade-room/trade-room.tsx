@@ -18,18 +18,13 @@ import {
 export const TradeRoom: FC = () => {
     const {id} = useParams();
     const remoteTrade = useTradeSubscription(id);
-    return <RenderRemote data={remoteTrade} success={(trade) => {
-
-
-        console.log(trade.nextTurnTime)
-        return (
+    return <RenderRemote data={remoteTrade} success={(trade) => (
             <STradeRoom>
                 <STitle>
                     Ход торгов {trade.name} (<LiveClock/>)
                 </STitle>
                 <SHelpMessage>
-                    Уважаемые участники, во время вашего хода вы можете изменить параметры торгов, указанных в таблице:
-                    <div>{}</div>
+                    <CountdownTimer targetDate={trade.dateEnd} title="До окончания торгов: "/>
                 </SHelpMessage>
                 <STradersList>
                     {
@@ -54,6 +49,5 @@ export const TradeRoom: FC = () => {
                     }
                 </STradersList>
             </STradeRoom>
-        )
-    }}/>;
+        )}/>;
 };

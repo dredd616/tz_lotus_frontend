@@ -15,7 +15,7 @@ export const CountdownTimer: FC<CountdownTimerProps> = ({targetDate, title}) => 
     }
     return (
         <>
-            <div>{title}</div>
+            <div>{title}&nbsp;</div>
             <ShowCounter
                 days={days}
                 hours={hours}
