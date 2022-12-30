@@ -1,5 +1,5 @@
 import React, { FC, PropsWithChildren } from 'react';
-import DateTimeDisplay from '../date-time-display/date-time-display';
+import { DateTimeDisplay } from '../date-time-display/date-time-display';
 import { SShowCounterWrapper } from './show-counter.styles'
 
 type ShowCounterProps = {
@@ -9,8 +9,7 @@ type ShowCounterProps = {
     seconds: number;
 }
 
-export const ShowCounter: FC<PropsWithChildren<ShowCounterProps>> = ({days, hours, minutes, seconds}) => {
-    return (
+export const ShowCounter: FC<PropsWithChildren<ShowCounterProps>> = ({days, hours, minutes, seconds}) => (
         <SShowCounterWrapper>
             { days ? <><DateTimeDisplay value={days}/><p>д.</p></> : null }
             { hours ? <><DateTimeDisplay value={hours}/><p>ч.</p></> : null }
@@ -18,4 +17,3 @@ export const ShowCounter: FC<PropsWithChildren<ShowCounterProps>> = ({days, hour
             { seconds ? <><DateTimeDisplay value={seconds}/><p>с.</p></> : null }
         </SShowCounterWrapper>
     );
-};

@@ -4,12 +4,8 @@ type DateTimeDisplayProps = {
     value: number;
 }
 
-const DateTimeDisplay: FC<DateTimeDisplayProps> = ({ value }) => {
-    return (
+export const DateTimeDisplay: FC<DateTimeDisplayProps> = ({ value }) => (
         <div>
             <p>{value}</p>
         </div>
     );
-};
-
-export default DateTimeDisplay;

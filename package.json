@@ -20,6 +20,7 @@
   "homepage": ".",
   "scripts": {
     "start": "cross-env DISABLE_ESLINT_PLUGIN=true react-app-rewired start",
+    "build": "cross-env react-app-rewired build",
     "lint": "lint-staged && yarn lint:types",
     "lint:types": "tsc --project ./tsconfig.json --noEmit",
     "postinstall": "husky install"
